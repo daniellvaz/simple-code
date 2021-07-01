@@ -1,0 +1,17 @@
+{
+  "name": "simplecode",
+  "author": {
+    "name": "Daniel Murilo Vaz",
+    "email": "daniellmvaz@gmail.com",
+    "url": "https://github.com/daniellvaz/livecode"
+  },
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^13.1.4"
+  }
+}
