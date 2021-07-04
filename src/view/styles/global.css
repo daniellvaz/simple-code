@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2e2e2;
+  font-family: "Rajdhani", sans-serif;
+  color: #2f2f2f;
+}
+
+header {
+  width: 100%;
+  height: 3rem;
+
+  background: #2f2f2f;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > .menu {
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > .menu > button {
+  width: 16px;
+  height: 16px;
+
+  border: 0;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+header > .menu > button + button {
+  margin-left: 1rem;
+}
+
+header > .menu > button.close {
+  background: #f56f6f;
+}
+
+header > .menu > button.close:hover {
+  filter: brightness(60%);
+}
+
+header > .menu > button.minimize {
+  background: #ffff6c;
+}
+
+header > .menu > button.minimize:hover {
+  filter: brightness(60%);
+}
+
+header > .menu > button.maximize {
+  background: #53cf53;
+}
+
+header > .menu > button.maximize:hover {
+  filter: brightness(60%);
+}
+
+header > .dragg {
+  width: calc(100vw - 80px);
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-app-region: drag;
+}
+
+header > .dragg > strong {
+  margin-right: 100px;
+  color: #e2e2e2;
+  font-weight: 700;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
