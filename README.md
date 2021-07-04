@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Simple Code 👋</h1>
+<h1 align="center">Welcome to Simple Codding 👋</h1>
 
 <img src="src/view/assets/simplecode.png" alt="simple code">
 
@@ -26,8 +26,18 @@ yarn install or npm install
 
 ## Usage
 
+### To build the application
+
 ```sh
-run yarn start or npm start to build the application and start the electron. Run yarn electro or npm electron to run electron separately.
+run yarn build or npm build
+```
+
+## Usage
+
+### To run electron
+
+```sh
+run yarn electron or npm electron
 ```
 
 ## Author
