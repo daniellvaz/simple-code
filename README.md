@@ -1,4 +1,7 @@
 <h1 align="center">Welcome to Simple Code 👋</h1>
+
+<img src="src/view/assets/simplecode.png" alt="simple code">
+
 <p>
   <a href="https://www.npmjs.com/package/Simple Code" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/Simple Code.svg">
@@ -22,34 +25,24 @@ yarn install or npm install
 ```
 
 ## Usage
-### To build application and run electron
-```sh
-yarn start 
-```
-```sh
-npm start 
-```
 
-### To run electron separately
 ```sh
-yarn electron 
-```
-```sh
-npm electron 
+run yarn start or npm start to build the application and start the electron. Run yarn electro or npm electron to run electron separately.
 ```
 
 ## Author
 
 👤 **Daniel Murilo Vaz**
 
-* Website: https://www.linkedin.com/in/daniel-murilo-vaz/
-* Twitter: [@daniellmvaz](https://twitter.com/daniellmvaz)
-* Github: [@daniellvaz](https://github.com/daniellvaz)
-* LinkedIn: [@daniel-murilo-vaz](https://linkedin.com/in/daniel-murilo-vaz)
+- Website: https://www.linkedin.com/in/daniel-murilo-vaz/
+- Twitter: [@daniellmvaz](https://twitter.com/daniellmvaz)
+- Github: [@daniellvaz](https://github.com/daniellvaz)
+- LinkedIn: [@daniel-murilo-vaz](https://linkedin.com/in/daniel-murilo-vaz)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

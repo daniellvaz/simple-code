@@ -5,9 +5,14 @@
 }
 
 body {
-  background: #e2e2e2;
+  background: #2f2f2f;
   font-family: "Rajdhani", sans-serif;
-  color: #2f2f2f;
+  color: #e2e2e2;
+}
+
+button {
+  cursor: pointer;
+  color: #e2e2e2;
 }
 
 header {
@@ -15,6 +20,7 @@ header {
   height: 3rem;
 
   background: #2f2f2f;
+  border-bottom: 1px solid #383838;
 
   display: flex;
   align-items: center;
@@ -86,7 +92,7 @@ header > .dragg > strong {
 
 #root {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 80px);
 
   border-radius: 8px;
 
@@ -94,4 +100,25 @@ header > .dragg > strong {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#root > img {
+  width: 80px;
+}
+
+#root > button {
+  height: 2rem;
+  padding: 0 2rem;
+  margin-top: 2rem;
+
+  background: transparent;
+
+  border: 1px solid #845ec2;
+  border-radius: 8px;
+
+  transition: filter 0.5s;
+}
+
+#root > button:hover {
+  filter: brightness(60%);
 }

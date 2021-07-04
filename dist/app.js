@@ -44,7 +44,7 @@ var alwaysOnTop = function (window) {
         return;
     }
     window.setAlwaysOnTop(false);
-    electron_1.ipcMain.emit('return', 'on-top');
+    electron_1.ipcMain.emit('action', 'teste');
 };
 var navBarActions = function (action, window) {
     switch (action) {
@@ -112,6 +112,11 @@ function createWindow() {
                 label: 'Always on top',
                 accelerator: process.platform === "darwin" ? "Shift+T" : "Shift+T",
                 click: function () { return alwaysOnTop(win); },
+            },
+            {
+                label: 'Reload',
+                accelerator: process.platform === "darwin" ? "Shift+R" : "Shift+R",
+                click: function () { return win.reload(); },
             },
         ],
     }));

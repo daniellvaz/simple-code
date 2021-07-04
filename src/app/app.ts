@@ -84,6 +84,11 @@ function createWindow() {
           accelerator: process.platform === "darwin" ? "Shift+T" : "Shift+T",
           click: () => alwaysOnTop(win),
         },
+        {
+          label: 'Reload',
+          accelerator: process.platform === "darwin" ? "Shift+R" : "Shift+R",
+          click: () => win.reload(),
+        },
       ],
     })
   );
