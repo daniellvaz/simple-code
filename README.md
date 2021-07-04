@@ -22,9 +22,20 @@ yarn install or npm install
 ```
 
 ## Usage
-
+### To build application and run electron
 ```sh
-run yarn start or npm start to build the application and start the electron. Run yarn electro or npm electron to run electron separately.
+yarn start 
+```
+```sh
+npm start 
+```
+
+### To run electron separately
+```sh
+yarn electron 
+```
+```sh
+npm electron 
 ```
 
 ## Author
