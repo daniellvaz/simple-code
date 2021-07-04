@@ -9,7 +9,7 @@ const alwaysOnTop = (window: BrowserWindow) => {
 
   window.setAlwaysOnTop(false);
 
-  ipcMain.emit('return', 'on-top');
+  ipcMain.emit('action', 'teste')
 }
 
 const navBarActions = (action: string, window: BrowserWindow) => {

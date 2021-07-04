@@ -2,7 +2,7 @@ const buttons = document.getElementsByTagName("button");
 const { ipcRenderer } = require("electron");
 
 const mainReturn = () => {
-  ipcRenderer.on("return", (e, arg) => {
+  ipcRenderer.once("action", (e, arg) => {
     console.log(arg);
   });
 };
