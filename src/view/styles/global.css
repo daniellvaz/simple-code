@@ -104,12 +104,13 @@ header > .dragg > strong {
 
 #root > img {
   width: 80px;
+  margin-bottom: 2rem;
 }
 
 #root > button {
+  min-width: 200px;
   height: 2rem;
   padding: 0 2rem;
-  margin-top: 2rem;
 
   background: transparent;
 
@@ -121,4 +122,8 @@ header > .dragg > strong {
 
 #root > button:hover {
   filter: brightness(60%);
+}
+
+#root > button + button {
+  margin-top: 1rem;
 }

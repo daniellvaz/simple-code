@@ -37,7 +37,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var electron_1 = require("electron");
-// import { screen } from '../settings/settings.json';
+// Opend Developer DevTools
+var openDevTools = function (window) {
+    if (!window.webContents.isDevToolsOpened()) {
+        window.webContents.openDevTools({ mode: 'bottom' });
+        return;
+    }
+    window.webContents.closeDevTools();
+};
+// Open inital page
+var openInitialPage = function (window) {
+    window.loadFile('src/view/index.html');
+};
+// Alwais on top function
 var alwaysOnTop = function (window) {
     if (!window.isAlwaysOnTop()) {
         window.setAlwaysOnTop(true);
@@ -46,21 +58,9 @@ var alwaysOnTop = function (window) {
     window.setAlwaysOnTop(false);
     electron_1.ipcMain.emit('action', 'teste');
 };
-var navBarActions = function (action, window) {
-    switch (action) {
-        case 'close':
-            window.close();
-            return;
-        case 'minimize':
-            window.isMinimized() ? window.restore() : window.minimize();
-            return;
-        case 'maximize':
-            window.isMaximized() ? window.restore() : window.maximize();
-            break;
-    }
-};
-var openFileToRender = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var filePaths, file, win;
+// open file
+var openFileToRender = function (window) { return __awaiter(void 0, void 0, void 0, function () {
+    var filePaths, file;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, electron_1.dialog.showOpenDialog({
@@ -73,12 +73,29 @@ var openFileToRender = function () { return __awaiter(void 0, void 0, void 0, fu
                 if (!file) {
                     return [2 /*return*/];
                 }
-                win = new electron_1.BrowserWindow();
-                win.loadFile(file);
                 return [2 /*return*/];
         }
     });
 }); };
+//navbar actions 
+var navBarActions = function (action, window) {
+    switch (action) {
+        case 'close':
+            window.close();
+            return;
+        case 'minimize':
+            window.isMinimized() ? window.restore() : window.minimize();
+            return;
+        case 'maximize':
+            window.isMaximized() ? window.restore() : window.maximize();
+        case 'open':
+            openFileToRender(window);
+            return;
+        case 'open-live-server':
+            window.loadURL('http://127.0.0.1:5500');
+            break;
+    }
+};
 // create the initial page
 function createWindow() {
     var win = new electron_1.BrowserWindow({
@@ -95,7 +112,6 @@ function createWindow() {
         },
     });
     win.loadFile("src/view/index.html");
-    win.webContents.toggleDevTools();
     electron_1.ipcMain.on('action', function (e, arg) {
         navBarActions(arg, win);
     });
@@ -106,7 +122,7 @@ function createWindow() {
             {
                 label: 'Open File',
                 accelerator: process.platform === "darwin" ? "Shift+O" : "Shift+O",
-                click: function () { return openFileToRender(); },
+                click: function () { return openFileToRender(win); },
             },
             {
                 label: 'Always on top',
@@ -117,6 +133,16 @@ function createWindow() {
                 label: 'Reload',
                 accelerator: process.platform === "darwin" ? "Shift+R" : "Shift+R",
                 click: function () { return win.reload(); },
+            },
+            {
+                label: 'Open DevTools',
+                accelerator: process.platform === "darwin" ? "Shift+D" : "Shift+D",
+                click: function () { return openDevTools(win); },
+            },
+            {
+                label: 'Open initial page',
+                accelerator: process.platform === "darwin" ? "Shift+F" : "Shift+F",
+                click: function () { return openInitialPage(win); },
             },
         ],
     }));

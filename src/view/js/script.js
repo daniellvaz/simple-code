@@ -17,6 +17,12 @@ const windowEvent = (event) => {
       return;
     case "minimize":
       ipcRenderer.send("action", "minimize");
+      return;
+    case "open":
+      ipcRenderer.send("action", "open");
+      return;
+    case "open-live-server":
+      ipcRenderer.send("action", "open-live-server");
       break;
   }
 };
